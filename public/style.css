@@ -1,0 +1,573 @@
+/* ===========================================
+   E CAR DOCTOR - PROFESSIONAL STYLESHEET
+   Modern electric vehicle workshop theme
+   =========================================== */
+
+/* --- RESET & BASE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark gradient background - modern EV feel */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d1f2d 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  align-items: center;     /* Center horizontally */
+  padding: 30px 20px;
+}
+
+/* --- FORM CONTAINER (light card) --- */
+.container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 35px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- HEADER --- */
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Electric bolt logo replacing wrench */
+.logo {
+  font-size: 52px;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: pulseLogo 2s ease-in-out infinite;
+}
+
+/* Subtle pulsing effect for the logo */
+@keyframes pulseLogo {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+h1 {
+  color: #e63946;      /* Red - signature brand color */
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* --- FORM FIELDS --- */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* Inputs and dropdowns - clean modern style */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+/* Focus: electric blue glow */
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #2d9cdb;  /* Electric blue */
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(45, 156, 219, 0.12);
+}
+
+/* --- SUBMIT BUTTON --- */
+#submitBtn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #e63946, #c1121f); /* Red gradient */
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Hover: lift and glow */
+#submitBtn:hover {
+  background: linear-gradient(135deg, #d62839, #a4132c);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.35);
+}
+
+/* Click effect */
+#submitBtn:active {
+  transform: translateY(0);
+}
+
+/* Disabled while submitting */
+#submitBtn:disabled {
+  background: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* --- MESSAGE BOX --- */
+.message {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  display: none;
+  font-weight: 500;
+}
+
+/* Success - green */
+.message.success {
+  display: block;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Error - red */
+.message.error {
+  display: block;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ===========================================
+   ABOUT US SECTION - Professional dark theme
+   =========================================== */
+
+/* Main about section wrapper */
+.about-section {
+  max-width: 480px;          /* Same width as the booking form */
+  margin: 50px auto 30px;    /* Space above and below */
+  padding: 0 5px;
+  width: 100%;
+}
+
+/* Section heading with underline accent */
+.about-section h2 {
+  color: #e63946;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+/* Red underline under heading */
+.about-section > h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #e63946;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Intro paragraph */
+.about-intro {
+  color: #c0c0d0;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+  margin: 20px 0 28px;
+}
+
+.about-intro strong {
+  color: #ffffff;
+}
+
+/* Mission paragraph */
+.about-mission {
+  color: #b0b0c8;
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: center;
+  margin-bottom: 28px;
+  padding: 0 10px;
+  font-style: italic;
+}
+
+/* --- Cards (bordered sections with glass effect) --- */
+.about-card {
+  background: rgba(42, 42, 62, 0.85);   /* Semi-transparent dark */
+  backdrop-filter: blur(5px);            /* Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Card hover effect - lifts slightly with glow */
+.about-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(230, 57, 70, 0.3);
+}
+
+/* Card heading with bottom border accent */
+.about-card h3 {
+  color: #e63946;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+
+/* Card list items */
+.about-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-card ul li {
+  color: #c0c0d0;
+  font-size: 14px;
+  padding: 7px 0;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.5;
+}
+
+/* Custom arrow bullet before each list item */
+.about-card ul li::before {
+  content: "▸";
+  color: #e63946;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Checkmark list (for Why Us) - green electric checkmarks */
+.about-card .checklist li::before {
+  content: none;            /* Remove the arrow */
+}
+
+.about-card .checklist li {
+  padding-left: 0;
+  color: #b0e0b0;          /* Light green for eco/EV feel */
+}
+
+/* --- Opening hours: day on left, time on right --- */
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0 !important;
+  color: #d0d0e0 !important;
+}
+
+.hours-list li::before {
+  content: none !important;
+}
+
+.hours-list li span {
+  font-weight: 600;
+  color: #f0f0ff;
+}
+
+/* --- Contact list --- */
+.contact-list li {
+  padding-left: 0 !important;
+  color: #d0d0e0 !important;
+}
+
+.contact-list li::before {
+  content: none !important;
+}
+
+/* --- Motto block with left accent bar --- */
+.about-motto {
+  text-align: center;
+  margin: 30px 0 10px;
+  padding: 18px 24px;
+  border-left: 4px solid #e63946;
+  background: rgba(42, 42, 62, 0.6);
+  border-radius: 0 14px 14px 0;
+}
+
+.about-motto p {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.3px;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN - Multi-device support
+   =========================================== */
+
+/* --- Very small phones (< 400px) --- */
+@media (max-width: 399px) {
+  body {
+    padding: 10px 8px;
+  }
+
+  .container {
+    padding: 22px 16px;
+    border-radius: 10px;
+  }
+
+  /* Larger header spacing */
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    font-size: 38px;
+    animation: none;            /* Disable animation on slow devices */
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  /* Bigger touch targets on small screens */
+  .form-group input,
+  .form-group select {
+    padding: 14px 12px;         /* Taller inputs for easier tapping */
+    font-size: 16px;            /* Prevents iOS zoom on focus */
+    border-radius: 8px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  #submitBtn {
+    padding: 16px;              /* Bigger tap area */
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  /* --- About section tweaks --- */
+  .about-section {
+    margin: 30px auto 15px;
+  }
+
+  .about-section h2 {
+    font-size: 22px;
+  }
+
+  .about-section > h2::after {
+    width: 50px;
+  }
+
+  .about-intro {
+    font-size: 14px;
+    margin: 16px 0 20px;
+  }
+
+  .about-card {
+    padding: 16px 14px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .about-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+  }
+
+  .about-card ul li {
+    font-size: 13px;
+    padding: 5px 0;
+    padding-left: 18px;
+  }
+
+  .about-card .checklist li {
+    font-size: 13px;
+  }
+
+  .about-mission {
+    font-size: 13px;
+    padding: 0 5px;
+  }
+
+  /* Stack opening hours vertically for tiny screens */
+  .hours-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding-bottom: 8px !important;
+  }
+
+  .hours-list li span {
+    min-width: auto;
+  }
+
+  .about-motto {
+    margin: 22px 0 8px;
+    padding: 14px 16px;
+  }
+
+  .about-motto p {
+    font-size: 15px;
+  }
+}
+
+/* --- Small phones (400px - 500px) --- */
+@media (min-width: 400px) and (max-width: 500px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .container {
+    padding: 28px 22px;
+    border-radius: 12px;
+  }
+
+  /* Bigger touch-friendly inputs */
+  .form-group input,
+  .form-group select {
+    padding: 14px 14px;
+    font-size: 16px;            /* Prevents iOS zoom on focus */
+  }
+
+  #submitBtn {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 42px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .about-section {
+    margin: 40px auto 20px;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .about-card {
+    padding: 18px 18px;
+  }
+
+  .about-card h3 {
+    font-size: 16px;
+  }
+
+  .about-motto p {
+    font-size: 17px;
+  }
+
+  #submitBtn {
+    padding: 13px;
+    font-size: 16px;
+  }
+}
+
+/* --- Tablets & large phones in landscape (501px - 768px) --- */
+@media (min-width: 501px) and (max-width: 768px) {
+  body {
+    padding: 40px 30px;
+  }
+
+  .container,
+  .about-section {
+    max-width: 540px;
+  }
+
+  .container {
+    padding: 45px 40px;
+  }
+
+  .logo {
+    font-size: 56px;           /* Slightly bigger on tablets */
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .about-section h2 {
+    font-size: 32px;
+  }
+
+  .about-card {
+    padding: 26px 28px;
+  }
+
+  .about-card h3 {
+    font-size: 19px;
+  }
+
+  .about-intro {
+    font-size: 16px;
+  }
+
+  .about-motto p {
+    font-size: 21px;
+  }
+
+  #submitBtn {
+    padding: 16px;
+    font-size: 18px;
+  }
+}
+
+/* --- Medium screens (769px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 50px 40px;
+  }
+
+  .container,
+  .about-section {
+    max-width: 560px;
+  }
+
+  .container {
+    padding: 50px 45px;
+  }
+
+  .about-section h2 {
+    font-size: 34px;
+  }
+}

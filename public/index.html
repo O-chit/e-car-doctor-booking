@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-car-doctor-zittau</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== MAIN WRAPPER ===== -->
+  <div class="container">
+
+    <!-- Header with logo/icon -->
+    <div class="header">
+      <div class="logo">🔧</div>
+      <h1>Kfz-Werkstatt</h1>
+      <p class="subtitle">Vereinbaren Sie Ihren Service-Termin online</p>
+    </div>
+
+    <!-- ===== BOOKING FORM ===== -->
+    <form id="bookingForm">
+
+      <!-- Customer Name -->
+      <div class="form-group">
+        <label for="customer_name">Ihr Name</label>
+        <input type="text" id="customer_name" name="customer_name"
+               placeholder="z. B. Max Mustermann" required>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email"
+               placeholder="z. B. max@beispiel.de" required>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        <label for="phone">Telefonnummer</label>
+        <input type="tel" id="phone" name="phone"
+               placeholder="z. B. 0123-4567890" required>
+      </div>
+
+      <!-- Car Model -->
+      <div class="form-group">
+        <label for="car_model">Fahrzeugmodell</label>
+        <input type="text" id="car_model" name="car_model"
+               placeholder="z. B. Tesla Model 3 2023" required>
+      </div>
+
+      <!-- Service Type (dropdown) -->
+      <div class="form-group">
+        <label for="service_type">Gewünschter Service</label>
+        <select id="service_type" name="service_type" required>
+          <option value="">-- Service auswählen --</option>
+          <option value="Oil Change">🛢️ Ölwechsel</option>
+          <option value="Brake Repair">🛞 Bremsenreparatur</option>
+          <option value="Tire Replacement">🔘 Reifenwechsel</option>
+          <option value="Engine Tune-Up">⚙️ Motoroptimierung</option>
+          <option value="AC Service">❄️ Klimaanlagen-Service</option>
+          <option value="Battery Check">🔋 Batterieprüfung</option>
+          <option value="Full Inspection">🔍 Vollständige Inspektion</option>
+        </select>
+      </div>
+
+      <!-- Booking Date -->
+      <div class="form-group">
+        <label for="booking_date">Wunschtermin</label>
+        <input type="date" id="booking_date" name="booking_date" required>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" id="submitBtn">📅 Termin buchen</button>
+
+    </form>
+
+    <!-- Message area (success / error) -->
+    <div id="message" class="message"></div>
+
+  </div>
+
+  <!-- ===== ABOUT US SECTION ===== -->
+  <div class="about-section">
+
+    <h2>Über uns</h2>
+
+    <p class="about-intro">
+      Willkommen bei <strong>E Car Doctor</strong> – Ihrer professionellen Werkstatt für Elektrofahrzeuge in Deutschland.<br>
+      Wir sind spezialisiert auf Wartung, Diagnose und Reparatur moderner Elektroautos und bieten zuverlässigen Service mit moderner Technik und erfahrenen Fachkräften.
+    </p>
+
+    <!-- Services card -->
+    <div class="about-card">
+      <h3>Unsere Leistungen</h3>
+      <ul>
+        <li>Wartung und Inspektion von Elektrofahrzeugen</li>
+        <li>Diagnose von Batterie- und Elektrosystemen</li>
+        <li>Reparatur von Motoren und Ladeeinheiten</li>
+        <li>Software- und Systemprüfung</li>
+        <li>Austausch von hochwertigen Ersatzteilen</li>
+      </ul>
+    </div>
+
+    <!-- Why us card -->
+    <div class="about-card">
+      <h3>Warum E Car Doctor?</h3>
+      <ul class="checklist">
+        <li>✔ Spezialisierung auf Elektrofahrzeuge</li>
+        <li>✔ Transparente Preise ohne versteckte Kosten</li>
+        <li>✔ Schnelle und einfache Online-Terminbuchung</li>
+        <li>✔ Moderne Diagnosegeräte</li>
+        <li>✔ Freundlicher und professioneller Service</li>
+      </ul>
+    </div>
+
+    <p class="about-mission">
+      Bei E Car Doctor stehen Qualität, Sicherheit und Kundenzufriedenheit an erster Stelle.<br>
+      Wir sorgen dafür, dass Ihr Elektrofahrzeug zuverlässig und sicher unterwegs bleibt.
+    </p>
+
+    <!-- Opening hours card -->
+    <div class="about-card">
+      <h3>Öffnungszeiten</h3>
+      <ul class="hours-list">
+        <li><span>Montag – Freitag:</span> 08:00 – 18:00</li>
+        <li><span>Samstag:</span> 09:00 – 14:00</li>
+        <li><span>Sonntag:</span> Geschlossen</li>
+      </ul>
+    </div>
+
+    <!-- Contact card -->
+    <div class="about-card">
+      <h3>Kontakt</h3>
+      <ul class="contact-list">
+        <li>📍 Berlin, Deutschland</li>
+        <li>📞 +49 XXX XXX XXXX</li>
+        <li>📧 info@ecardoctor.de</li>
+      </ul>
+    </div>
+
+    <!-- Motto -->
+    <div class="about-motto">
+      <p>„Die Experten für Ihr Elektroauto.“</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
