@@ -61,6 +61,11 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// --- DEBUG ROUTE: GET /api/test ---
+app.get("/api/test", (req, res) => {
+  res.json({ status: "ok", env: { email_user: !!process.env.EMAIL_USER, notification: process.env.NOTIFICATION_EMAIL } });
+});
+
 // --- API ROUTE: POST /api/book ---
 app.post("/api/book", (req, res) => {
   const { customer_name, email, phone, car_model, service_type, booking_date } = req.body;
