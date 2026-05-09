@@ -50,8 +50,25 @@ db.exec(`
 `);
 
 // --- SET UP NODEMAILER ---
+// --- SET UP NODEMAILER (force IPv4 for Gmail SMTP) ---
+// Railway only supports IPv4 outbound, so we must resolve Gmail's SMTP to IPv4 manually
+const dns = require("dns");
+
+let smtpHost = "smtp.gmail.com";
+
+// Resolve Gmail SMTP to IPv4 addresses
+try {
+  const addresses = dns.resolve4Sync(smtpHost);
+  if (addresses && addresses.length > 0) {
+    smtpHost = addresses[0]; // Use first IPv4 address
+    console.log("✅ Gmail SMTP resolved to IPv4:", smtpHost);
+  }
+} catch (e) {
+  console.log("⚠️ Could not resolve Gmail SMTP IPv4, using hostname");
+}
+
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: smtpHost,
   port: 587,
   secure: false,
   auth: {
