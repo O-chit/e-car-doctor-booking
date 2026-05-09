@@ -63,7 +63,33 @@ const transporter = nodemailer.createTransport({
 
 // --- DEBUG ROUTE: GET /api/test ---
 app.get("/api/test", (req, res) => {
-  res.json({ status: "ok", env: { email_user: !!process.env.EMAIL_USER, notification: process.env.NOTIFICATION_EMAIL } });
+  res.json({
+    status: "ok",
+    env: {
+      email_user_set: !!process.env.EMAIL_USER,
+      email_pass_set: !!process.env.EMAIL_PASS,
+      email_pass_length: process.env.EMAIL_PASS ? process.env.EMAIL_PASS.length : 0,
+      notification: process.env.NOTIFICATION_EMAIL
+    }
+  });
+});
+
+// --- TEST EMAIL ROUTE: GET /api/test-email ---
+app.get("/api/test-email", (req, res) => {
+  transporter.sendMail({
+    from: process.env.EMAIL_USER,
+    to: process.env.NOTIFICATION_EMAIL || process.env.EMAIL_USER,
+    subject: "🔧 Test-E-Mail von E Car Doctor",
+    text: "Diese E-Mail bestätigt, dass der SMTP-Server funktioniert."
+  }, (mailErr, info) => {
+    if (mailErr) {
+      console.error("❌ Test email error:", mailErr.message);
+      res.json({ success: false, error: mailErr.message });
+    } else {
+      console.log("✅ Test email sent successfully");
+      res.json({ success: true, messageId: info.messageId });
+    }
+  });
 });
 
 // --- API ROUTE: POST /api/book ---
